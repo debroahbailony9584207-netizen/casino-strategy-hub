@@ -11,6 +11,6 @@ export const Layout = () => (
       <Outlet />
     </main>
     <SiteFooter />
-    <ScrollRestoration />
+    <ScrollRestoration getKey={(location) => location.pathname} />
   </div>
 );

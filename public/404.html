@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aurelius</title>
+    <script>
+      // SPA-fallback для GitHub Pages.
+      // GH Pages при отсутствии файла отдаёт 404.html — мы редиректим
+      // на корень с сохранением пути в hash, чтобы HashRouter подхватил.
+      (function () {
+        var path = window.location.pathname + window.location.search;
+        var base = "/";
+        var segments = window.location.pathname.split("/").filter(Boolean);
+        // Если это GitHub Pages в подпапке (username.github.io/repo/...)
+        if (
+          window.location.hostname.endsWith("github.io") &&
+          segments.length > 0
+        ) {
+          base = "/" + segments[0] + "/";
+          path = "/" + segments.slice(1).join("/");
+        }
+        window.location.replace(base + "#" + (path || "/"));
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -30,9 +30,17 @@ const routes = [
   },
 ];
 
-// На GitHub Pages используем HashRouter, чтобы deep-links работали без серверной конфигурации.
-// Локально и в превью — обычный BrowserRouter.
-const useHash = import.meta.env.VITE_USE_HASH_ROUTER === "true";
+// Определяем, на GitHub Pages ли мы находимся.
+// Для GH Pages используем HashRouter — это самый надёжный способ:
+// все маршруты работают через #, не нужно настраивать сервер,
+// deep-links и обновление страницы работают «из коробки».
+const isGitHubPages =
+  typeof window !== "undefined" &&
+  window.location.hostname.endsWith("github.io");
+
+const useHash =
+  import.meta.env.VITE_USE_HASH_ROUTER === "true" || isGitHubPages;
+
 const router = useHash
   ? createHashRouter(routes)
   : createBrowserRouter(routes, { basename: import.meta.env.BASE_URL });
