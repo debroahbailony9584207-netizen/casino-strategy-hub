@@ -24,7 +24,7 @@ export const SiteFooter = () => (
         </div>
       </div>
       <div className="mt-10 border-t border-border/60 pt-6 text-center text-xs">
-        © {new Date().getFullYear()} Aurelius Casino Strategy. 18+. Все права защищены.Вериф55
+        © {new Date().getFullYear()} Aurelius Casino Strategy. 18+. Все права защищены.
       </div>
     </div>
   </footer>
