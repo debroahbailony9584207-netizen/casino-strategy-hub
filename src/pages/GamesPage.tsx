@@ -3,17 +3,17 @@ import { ArrowRight } from "lucide-react";
 import { GAMES } from "@/data/games";
 
 const GamesPage = () => {
-  document.title = "Выбор игры — стратегии казино | Aurelius";
+  document.title = "Обзоры игр казино | Aurelius";
 
   return (
     <section className="container py-16">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Каталог стратегий</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Каталог обзоров</p>
         <h1 className="mt-3 font-display text-4xl sm:text-5xl">
-          Выберите <span className="text-gradient-gold">игру</span>
+          Популярные <span className="text-gradient-gold">игры</span>
         </h1>
         <p className="mt-5 text-muted-foreground">
-          Кликните по карточке — откроется свежая стратегия с математической базой, конкретными решениями и правилами банкролл-менеджмента.
+          Кликните по карточке — откроется обзор: история игры, правила, форматы и любопытные факты.
         </p>
       </div>
 
@@ -43,7 +43,7 @@ const GamesPage = () => {
               <h2 className="mt-3 font-display text-2xl">{g.name}</h2>
               <p className="mt-1 text-sm text-muted-foreground">{g.tagline}</p>
               <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                Открыть стратегию
+                Читать обзор
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </div>
             </div>
