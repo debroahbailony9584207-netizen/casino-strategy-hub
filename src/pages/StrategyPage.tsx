@@ -1,5 +1,5 @@
 import { Link, useParams, Navigate } from "react-router-dom";
-import { ArrowLeft, AlertTriangle, CheckCircle2, TrendingUp } from "lucide-react";
+import { ArrowLeft, AlertTriangle, Sparkles, BookOpen } from "lucide-react";
 import { GAMES, getGame } from "@/data/games";
 
 const StrategyPage = () => {
@@ -8,7 +8,7 @@ const StrategyPage = () => {
 
   if (!game) return <Navigate to="/games" replace />;
 
-  document.title = `Стратегия ${game.name} — свежий гайд | Aurelius`;
+  document.title = `${game.name} — обзор игры | Aurelius`;
 
   return (
     <article className="container py-12">
@@ -22,7 +22,7 @@ const StrategyPage = () => {
       {/* HEADER */}
       <header className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-center">
         <div className="animate-fade-in-up">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Свежая стратегия 2025</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Обзор игры</p>
           <h1 className="mt-3 font-display text-5xl sm:text-6xl">
             {game.name}
           </h1>
@@ -61,16 +61,16 @@ const StrategyPage = () => {
       <aside className="mt-10 flex gap-4 rounded-lg border border-destructive/40 bg-destructive/10 p-5">
         <AlertTriangle className="h-5 w-5 shrink-0 text-destructive mt-0.5" />
         <p className="text-sm text-foreground/90">
-          <strong>Финансовый риск:</strong> ни одна стратегия не гарантирует выигрыш. Преимущество казино присутствует в большинстве игр.
-          Играйте только на деньги, которые готовы потерять, и устанавливайте чёткие лимиты сессии.
+          <strong>Информационный характер:</strong> материал носит ознакомительный характер и не является призывом к игре.
+          Азартные игры связаны с финансовым риском и могут вызвать зависимость. 18+.
         </p>
       </aside>
 
-      {/* STRATEGIES */}
+      {/* SECTIONS */}
       <section className="mt-16">
         <div className="mb-8 flex items-center gap-3">
-          <TrendingUp className="h-5 w-5 text-primary" />
-          <h2 className="font-display text-3xl">Основные стратегические блоки</h2>
+          <BookOpen className="h-5 w-5 text-primary" />
+          <h2 className="font-display text-3xl">Об игре</h2>
         </div>
 
         <div className="space-y-6">
@@ -93,11 +93,11 @@ const StrategyPage = () => {
 
       {/* TIPS */}
       <section className="mt-16">
-        <h2 className="font-display text-3xl">Практические правила</h2>
+        <h2 className="font-display text-3xl">Интересные факты</h2>
         <ul className="mt-6 space-y-3">
           {game.tips.map((tip) => (
             <li key={tip} className="flex gap-3 rounded-lg border border-border/60 bg-card/50 p-4">
-              <CheckCircle2 className="h-5 w-5 shrink-0 text-primary mt-0.5" />
+              <Sparkles className="h-5 w-5 shrink-0 text-primary mt-0.5" />
               <span className="text-foreground/90">{tip}</span>
             </li>
           ))}
